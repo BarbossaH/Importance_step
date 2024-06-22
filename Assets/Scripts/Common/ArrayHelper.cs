@@ -33,6 +33,21 @@ namespace GameName.Common
       return result.ToArray();
     }
 
+    public static T[] FindAll<T>(this T[] array, Func<T, bool> condition)
+    {
+      List<T> result = new List<T>();
+
+      for (int i = 0; i < array.Length; i++)
+      {
+        if (condition(array[i]))
+        {
+          result.Add(array[i]);
+        }
+      }
+
+      return result.ToArray();
+    }
+
     public static Q[] Select<T, Q>(this T[] array, Func<T, Q> condition)
     {
       Q[] result = new Q[array.Length];
