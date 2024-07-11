@@ -14,6 +14,7 @@ public class SkillCasterFactory
     // skillSelector = Activator.CreateInstance(type) as IAttackSelector;
     public static IAttackSelector CreateAttackSelector(SkillData skillData)
     {
+        //根据skillData创建具体的选择器
         string selectorClassName = string.Format("GameName.Skill.{0}AttackSelector", skillData.selectorType);
 
         return CreateObject<IAttackSelector>(selectorClassName);

@@ -68,6 +68,8 @@ public class CharacterSkillSystem : MonoBehaviour
         // //选中目标
         // if (skillData.skillType == SkillType.Single)
         #endregion
+
+        //在事件触发的那一刻，创建技能
         skillManger.CreateSkill(skillData);
     }
     //随机技能，给npc提供
